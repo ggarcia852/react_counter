@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function CounterHooks(props) {
+export default function CounterHooks({ initialCount }) {
+    const [count, setCount] = useState(initialCount)
     return (
         <div>
-            <button>-</button>
-                <span>{props.initialCount}</span>
-            <button>+</button>
-        </div>
+            <button onClick={() => setCount(prevCount => prevCount -1)}>-</button>
+                <span>{count}</span>
+            <button onClick={() => setCount(prevCount => prevCount +1)}>-</button> 
+       </div>
     )
 }
